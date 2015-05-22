@@ -11,6 +11,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -104,4 +106,32 @@ public class Orders {
     }
     
     
+
+
+ JSONObject root=new JSONObject();
+       public String toJSON(){
+
+         JSONObject purchases=new JSONObject();
+         JSONArray array=new JSONArray();
+        for(Map.Entry<Integer,Integer> entry:this.productId_quantity.entrySet()){     
+            purchases.put("productId", entry.getKey());
+            purchases.put("quantity",entry.getValue());   
+            array.add(purchases);
+        }
+        
+        
+        LinkedHashMap classObj=new LinkedHashMap();
+        classObj.put("customerId", this.getCustomerId());
+        classObj.put("customerName", this.getCustomerName());
+        classObj.put("timeReceived", this.getTimeReceived());
+        classObj.put("timeProcessed", this.getTimeProcessed());
+        classObj.put("timeFulfilled", this.getTimeFullFilled());
+        classObj.put("purchases", array);
+        classObj.put("notes", this.getNotes());
+        
+        JSONArray orders=new JSONArray();
+        orders.add(classObj);
+        root.put("orders", orders);
+        return root.toJSONString();
+    }
 }
