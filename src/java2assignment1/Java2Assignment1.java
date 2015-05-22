@@ -34,7 +34,7 @@ public class Java2Assignment1 {
         notes = sc.nextLine();
 
         Order order = new Order(customerId, customerName);
-
+        
         try {
             if (order.getCustomerId().equals("") || order.getCustomerName().equals("")) {
                 throw new RuntimeException("Customer Id or Name Does not Exists");
@@ -42,6 +42,9 @@ public class Java2Assignment1 {
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
+        
+        Purchase purchase= new Purchase("", quantity)
+        
 
     }
 
