@@ -18,7 +18,7 @@ package java2assignment1;
 
 /**
  *
- * @author Len Payne <len.payne@lambtoncollege.ca>
+ * @author Hirenkumar Patel
  */
 public class Purchase {
     private String productId;
