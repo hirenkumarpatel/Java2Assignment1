@@ -6,38 +6,78 @@
 
 package java2assignment1;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 /**
  *
  * @author c0651609
  */
 public class Order {
-    String customerId;
-    String customerName;
-    String timeReceived;
-    String timeProcessed;
-    String timeFulfilled;
-    //List<String> listOfPurchases;
-    String notes;
+    private String customerId;
+    private String customerName;
+    private Date timeReceived;
+    private Date timeProcessed;
+    private Date timeFulfilled;
+    private List<Purchase> listOfPurchases = new ArrayList<>();
+    private String notes;
     
-    public void setCustomerId(String newCustomerId)
-    {
-        this.customerId=newCustomerId;
+    public Order(String customerId, String customerName) {
+        this.customerId = customerId;
+        this.customerName = customerName;
     }
-    public String getCustomerId()
-    {
-        return this.customerId;
+    
+    public void addPurchase(Purchase p) {
+        listOfPurchases.add(p);
     }
-    public void setCustomerName(String newCustomerName)
-    {
-        this.customerName=newCustomerName;
+
+    public String getCustomerId() {
+        return customerId;
     }
-    public String getCustomerName()
-    {
-        return this.customerName;
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
-    public void setTimeReceived(String newTimeReceived)
-    {
-        this.timeReceived=newTimeReceived;
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public Date getTimeReceived() {
+        return timeReceived;
+    }
+
+    public void setTimeReceived(Date timeReceived) {
+        this.timeReceived = timeReceived;
+    }
+
+    public Date getTimeProcessed() {
+        return timeProcessed;
+    }
+
+    public void setTimeProcessed(Date timeProcessed) {
+        this.timeProcessed = timeProcessed;
+    }
+
+    public Date getTimeFulfilled() {
+        return timeFulfilled;
+    }
+
+    public void setTimeFulfilled(Date timeFulfilled) {
+        this.timeFulfilled = timeFulfilled;
+    }
+
+    public List<Purchase> getListOfPurchases() {
+        return listOfPurchases;
+    }
+
+    public void setListOfPurchases(List<Purchase> listOfPurchases) {
+        this.listOfPurchases = listOfPurchases;
     }
 
     public String getNotes() {
@@ -47,26 +87,5 @@ public class Order {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-    public String getTimeReceived()
-    {
-        return this.timeReceived;
-    }
     
-    public String getTimeProcessed()
-    {
-        return this.timeProcessed;
-    }
-    public void setTimeProcessed(String newTimeProcessed)
-    {
-        this.timeProcessed=newTimeProcessed;
-    }
-    public void setTimeFulfilled(String newTimeFulfilled)
-    {
-        this.timeFulfilled=newTimeFulfilled;
-    }
-    public String getTimeFulfilled()
-    {
-        return this.timeFulfilled;
-    }
-    //public void setNotes(String newNote)
 }
