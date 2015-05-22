@@ -43,7 +43,7 @@ public class Java2Assignment1 {
             System.out.println(e.getMessage());
         }
         
-        Purchase purchase= new Purchase("", quantity)
+       // Purchase purchase= new Purchase("", quantity)
         
 
     }
