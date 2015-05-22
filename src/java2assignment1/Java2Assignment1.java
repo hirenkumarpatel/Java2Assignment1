@@ -33,7 +33,7 @@ public class Java2Assignment1 {
         System.out.println("Enter Notes");
         notes = sc.nextLine();
 
-        Order order = new Order(customerId, customerName);
+        Orders order = new Orders(customerId, customerName);
         
         try {
             if (order.getCustomerId().equals("") || order.getCustomerName().equals("")) {
@@ -43,7 +43,7 @@ public class Java2Assignment1 {
             System.out.println(e.getMessage());
         }
         
-       // Purchase purchase= new Purchase("", quantity)
+        //Purchase purchase= new Purchase("", quantity);
         
 
     }
