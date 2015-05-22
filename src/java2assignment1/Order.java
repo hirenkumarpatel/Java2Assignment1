@@ -39,6 +39,14 @@ public class Order {
     {
         this.timeReceived=newTimeReceived;
     }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
     public String getTimeReceived()
     {
         return this.timeReceived;
